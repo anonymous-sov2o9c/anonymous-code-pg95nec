@@ -1,0 +1,26 @@
+[run_eval]
+prepared_root = "/path/to/omnichainbench_prepared"
+protocol = "main"
+artifacts_root = "../../artifacts/runs"
+prompt_root = "../../prompts/benchmark_v1"
+run_name = "mock-main-demo"
+model_name = "mock"
+adapter = "mock"
+chain_manifest = "../../artifacts/chain_pairs.jsonl"
+enable_oracle_track = true
+oracle_prompt_root = "../../prompts/benchmark_oracle_v1"
+# This example assumes prepared data was built with Oracle visual media enabled,
+# e.g. via configs/examples/prepare_main.toml.
+
+[judge]
+backend = "static-pass"
+prompt_root = "../../prompts/judge_v1"
+invalid_json_retries = 1
+concurrency = 1
+
+[structurer]
+backend = "static-parse"
+prompt_root = "../../prompts/structurer_v1"
+oracle_prompt_root = "../../prompts/structurer_oracle_v1"
+invalid_json_retries = 1
+concurrency = 1

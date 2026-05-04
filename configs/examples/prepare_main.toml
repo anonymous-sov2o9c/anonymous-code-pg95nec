@@ -1,0 +1,9 @@
+[prepare_data]
+data_root = "/path/to/omnichainbench"
+prepared_root = "/path/to/omnichainbench_prepared"
+media_formats = ["frames", "sampled_video"]
+generate_oracle_visual_media = true
+workers = 8
+protocols = ["main"]
+# For model-native sampling, copy this file and replace `main` with
+# `your_package.protocols:YourNativeSamplingProtocol`.
